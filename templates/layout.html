@@ -1,0 +1,35 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - TechCorp</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">TechCorp</div>
+            <nav>
+                <a href="/" class="{{if eq .Active "home"}}active{{end}}">Home</a>
+                <a href="/about" class="{{if eq .Active "about"}}active{{end}}">About</a>
+                <a href="/services" class="{{if eq .Active "services"}}active{{end}}">Services</a>
+                <a href="/contact" class="{{if eq .Active "contact"}}active{{end}}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{template "content" .}}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TechCorp Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+{{end}}
